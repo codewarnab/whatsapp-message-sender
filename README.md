@@ -1,6 +1,6 @@
 # WhatsApp Message Sender
 
-[Live Demo](https://your-username.github.io/whatsapp-message-sender)
+[Live Demo](https://codewarnab.github.io/whatsapp-message-sender/)
 
 This project is a simple web application that allows users to compose and send WhatsApp messages directly through a web interface.
 
