@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp Message Sender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="container">
+            <h1>WhatsApp Message Sender</h1>
+            <div class="input-container">
+                <input type="text" id="number" placeholder="Reciever Whatsapp Number" pattern="[0-9]*" inputmode="numeric" autocomplete="true" autofocus  >
+                <p id="input-error"> </p>
+            </div>
+                <select onchange="setStyle(this)">
+                <option value="">Select style </option>
+                <option value="*">Bold </option>
+                <option value="_">Italic </option>
+                <option value="```">Monospace </option>
+                <option value="~">Strikethrough </option>
+            </select>
+            <div class="input-container">
+                <textarea  id="message" ></textarea>
+                <p id="message-error"> </p>
+            </div>
+            <button id="sendBtn" onclick="sendMessage()">Send</button>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
