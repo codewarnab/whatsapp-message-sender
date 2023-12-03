@@ -4,13 +4,13 @@ let sendBtn= document.getElementById('sendBtn');
 let input_error =document.getElementById("input-error");
 let message_error =document.getElementById("message-error");
 let style = '';
+let charCount = document.getElementById("charCount");
 
 
 
 function setStyle(e){
     style = e.value;
 }
-
 
 function inputValidator(){
     if(number.value.length!=10){
@@ -25,6 +25,7 @@ function inputValidator(){
         
     }
 }
+
 function messageValidator(){
 
     if(messageInput.value.length<=0){
@@ -40,7 +41,6 @@ function messageValidator(){
     }
 }
 
-
 function sendMessage(){
     const isInputValid = inputValidator();
     const isMessageValid = messageValidator();
@@ -55,5 +55,12 @@ function sendMessage(){
         a.click()
 
     }
-
 }
+
+// updates message length 
+function updateCharCount() {
+    charCount.innerHTML = messageInput.value.length;
+}
+
+// event listener that updates char count in real time
+messageInput.addEventListener('input', updateCharCount);
