@@ -28,7 +28,7 @@ body{
     border-radius: 8px;
 }
 
-.input-container {
+input-container {
     display: flex;
     flex-direction: row;
 }
@@ -110,7 +110,6 @@ button:hover{
 
 #char-count {
     text-align: right;
-    direction: rtl;
     font-family: Arial, Helvetica, sans-serif;
     font-size: small;
 }
