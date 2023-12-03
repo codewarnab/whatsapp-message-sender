@@ -43,9 +43,10 @@ function messageValidator(){
 function sendMessage(){
     const isInputValid = inputValidator();
     const isMessageValid = messageValidator();
+    let trimmed = messageInput.value.replace(/^\s+|\s+$/g, '');
 
-    if (isInputValid && isMessageValid) {
-        let message = style + messageInput.value.replace(/^\s+|\s+$/g, '') + style; // trim beginning/end spaces
+    if (isInputValid && isMessageValid && trimmed.length > 0) {
+        let message = style + trimmed + style; // trim beginning or end spaces
         let api = `https://api.whatsapp.com/send/?phone=${number.value}&text=${message}`
     
         let a = document.createElement('a');
@@ -53,5 +54,8 @@ function sendMessage(){
         a.setAttribute('target',"_blank"); //for opening in a new tab  
         a.click()
 
+    } else {
+        message_error.style.display = 'block';
+        message_error.innerHTML = "message cannot be only spaces"
     }
 }
