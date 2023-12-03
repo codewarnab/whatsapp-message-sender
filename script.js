@@ -4,7 +4,6 @@ let sendBtn= document.getElementById('sendBtn');
 let input_error =document.getElementById("input-error");
 let message_error =document.getElementById("message-error");
 let style = '';
-let char_count = document.getElementById("char-count");
 
 
 
@@ -46,7 +45,7 @@ function sendMessage(){
     const isMessageValid = messageValidator();
 
     if (isInputValid && isMessageValid) {
-        let message = style+ messageInput.value + style;
+        let message = style + messageInput.value.trim() + style;
         let api = `https://api.whatsapp.com/send/?phone=${number.value}&text=${message}`
     
         let a = document.createElement('a');
@@ -56,11 +55,3 @@ function sendMessage(){
 
     }
 }
-
-// updates message length 
-function updateCharCount() {
-    char_count.innerHTML = messageInput.value.length;
-}
-
-// event listener that updates char count in real time
-messageInput.addEventListener('input', updateCharCount);
