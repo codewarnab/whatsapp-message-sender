@@ -28,7 +28,7 @@ body{
     border-radius: 8px;
 }
 
-input-container {
+.input-container {
     display: flex;
     flex-direction: row;
 }
