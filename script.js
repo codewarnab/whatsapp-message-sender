@@ -45,7 +45,7 @@ function sendMessage(){
     const isMessageValid = messageValidator();
 
     if (isInputValid && isMessageValid) {
-        let message = style + messageInput.value.trim() + style;
+        let message = style + messageInput.value.replace(/^\s+|\s+$/g, '') + style; // trim beginning/end spaces
         let api = `https://api.whatsapp.com/send/?phone=${number.value}&text=${message}`
     
         let a = document.createElement('a');
