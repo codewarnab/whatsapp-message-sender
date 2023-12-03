@@ -31,6 +31,7 @@ body{
 input-container {
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 #message-error , #input-error{
