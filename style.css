@@ -34,6 +34,7 @@ body{
 input-container {
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 #message-error , #input-error{
@@ -111,5 +112,10 @@ button:hover{
     100%{
         transform: translateX(0px);
     }
-    
+}
+
+#char-count {
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
 }
