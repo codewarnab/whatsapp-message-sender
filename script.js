@@ -4,6 +4,7 @@ let sendBtn= document.getElementById('sendBtn');
 let input_error =document.getElementById("input-error");
 let message_error =document.getElementById("message-error");
 let style = '';
+let charCount = document.getElementById("char-count");
 
 
 
@@ -59,3 +60,10 @@ function sendMessage(){
         message_error.innerHTML = "message cannot be only spaces"
     }
 }
+
+function updateCharCount() {
+    charCount.innerHTML = messageInput.value.length;
+}
+
+// event listener that updates char count in real time
+messageInput.addEventListener('input', updateCharCount);
