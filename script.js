@@ -11,7 +11,6 @@ function setStyle(e){
     style = e.value;
 }
 
-
 function inputValidator(){
     if(number.value.length!=10){
         number.classList.add("error");
@@ -25,6 +24,7 @@ function inputValidator(){
         
     }
 }
+
 function messageValidator(){
 
     if(messageInput.value.length<=0){
@@ -40,13 +40,13 @@ function messageValidator(){
     }
 }
 
-
 function sendMessage(){
     const isInputValid = inputValidator();
     const isMessageValid = messageValidator();
+    let trimmed = messageInput.value.replace(/^\s+|\s+$/g, '');
 
-    if (isInputValid && isMessageValid) {
-        let message = style+ messageInput.value + style;
+    if (isInputValid && isMessageValid && trimmed.length > 0) {
+        let message = style + trimmed + style; // trim beginning or end spaces
         let api = `https://api.whatsapp.com/send/?phone=${number.value}&text=${message}`
     
         let a = document.createElement('a');
@@ -54,6 +54,8 @@ function sendMessage(){
         a.setAttribute('target',"_blank"); //for opening in a new tab  
         a.click()
 
+    } else {
+        message_error.style.display = 'block';
+        message_error.innerHTML = "message cannot be only spaces"
     }
-
 }
